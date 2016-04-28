@@ -1,0 +1,29 @@
+alias leanplum="cd ~/Documents/Leanplum"
+alias lpsearch="~/Documents/Leanplum/Tools/developer-env/csearch"
+
+# Exporting the JAVA_HOME for the GAE
+#export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+#export _JAVA_OPTIONS='-Xmx4096m'
+#export _JAVA_OPTIONS='-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M'
+
+export LEANPLUM_ROOT=/Users/aleksandar/Documents/Leanplum
+
+export PATH=/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=~/Downloads/Google\ App\ Engine\ SDK\ for\ Java/appengine-java-sdk-1.9.27/bin:$PATH
+export PATH=~/Downloads/Phabricator/arcanist/bin:$PATH
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/aleksandar/google-cloud-sdk/path.bash.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/aleksandar/google-cloud-sdk/completion.bash.inc'
+
+# Enable arcanist tab completion
+source '/Users/aleksandar/Downloads/Phabricator/arcanist/resources/shell/bash-completion'
+
+# SOCKS
+alias run_proxy_prod="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b prometheus-server --project leanplum"
+alias run_proxy_staging="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b jenkins --project leanplum-staging"
+alias chrome_proxy="\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --user-data-dir=~/.chrome-profiles/prod --proxy-server=\"socks5://localhost:9090\" &"
+

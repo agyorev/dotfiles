@@ -1,0 +1,89 @@
+#!/bin/bash
+
+DOTFILES=(
+".bash_profile"
+".bashrc"
+".vimrc"
+".tmux.conf"
+".leanplum_profile"
+)
+PACKAGES=(
+"bash-completion" 
+"cmake" 
+"git" 
+"gradle"
+"macvim" 
+"maven" 
+"openssl" 
+"python" 
+"reattach-to-user-namespace" 
+"redis" 
+"the_silver_searcher" 
+"tmux"
+)
+
+VIM_PLUGINS=(
+"gmarik/Vundle.vim"
+"scrooloose/nerdtree"
+"scrooloose/nerdcommenter"
+"godlygeek/tabular"
+"tpope/vim-fugitive"
+"elzr/vim-json"
+"kchmck/vim-coffee-script"
+"kien/ctrlp.vim"
+"sjl/gundo.vim"
+"Valloric/YouCompleteMe"
+"scrooloose/syntastic"
+)
+
+# make sure Xcode Command Line Tools are installed
+if [[ "$(xcode-select -p)" != *"Contents/Developer" ]]; then
+  echo "Xcode Command Line Tools are not installed"
+  $(xcode-select --install)
+fi
+
+echo "Installing brew packages..."
+for package in "${PACKAGES[@]}"; do
+  brew install $package
+done
+
+brew tap homebrew/completions
+echo
+
+# update <source> <destination>
+update() {
+  if [ -e "$2" ] || [ -h "$2" ]; then
+    read -r -p "The file $2 already exists. Are you sure you want to replace it? [y/N] " response
+    if [[ $response =~ ^[yY]$ ]]; then
+      echo "Removing old $2"
+      rm "$2"
+      echo "Creating a symlink $2 for $1"
+      ln -s "$1" "$2"
+    fi
+  else
+    echo "Creating a symlink $2 for $1"
+    ln -s "$1" "$2"
+  fi
+  echo
+}
+
+echo "Creating symbolic links for the dotfiles..."
+for dotfile in "${DOTFILES[@]}"; do
+  update "$(pwd)/$dotfile" ~/$dotfile
+done
+echo
+
+echo "Cloning vim plugins repositories..."
+mkdir -p ~/.vim/bundle
+for vim_plugin in "${VIM_PLUGINS[@]}"; do
+  plugin=$(echo $vim_plugin | sed 's/.*\///')
+  if [[ -d ~/.vim/bundle/$plugin ]]; then
+    echo "Plugin $vim_plugin already exists."
+  else
+    git clone https://github.com/$vim_plugin ~/.vim/bundle/$plugin
+  fi
+done
+echo
+
+echo "To complete the vim plugin installation launch vim and run :PluginInstall"
+echo "Restart your terminal :)"

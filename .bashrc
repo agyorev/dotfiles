@@ -34,9 +34,14 @@ parse_git_branch() {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
 
+# alight the current time to the right
+right_align_time() {
+  printf "%*s\r" $(( COLUMNS-1 )) "$(date +%H:%M:%S)"
+}
+
 # (user @ host): <pwd>
 #  (<git branch>) ↳$
-export PS1="\[\033[01;32m\](\u @ $(scutil --get ComputerName))\[\033[00m\]: \[\033[01;33m\]\w \n\[\033[01;35m\]\$(parse_git_branch) \[\033[01;32m\]↳ \[\033[00m\]$ "
+export PS1="\$(right_align_time)\[\033[01;32m\](\u @ $(scutil --get ComputerName))\[\033[00m\]: \[\033[01;33m\]\w \n\[\033[01;35m\]\$(parse_git_branch) \[\033[01;32m\]↳ \[\033[00m\]$ "
 
 # enabling OS X terminal colors
 export CLICOLOR=1

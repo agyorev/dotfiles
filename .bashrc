@@ -1,10 +1,14 @@
 # go up $1 number of directories
 up() {
-  local path i
-  for (( i=0; i < $1; i++ )); do
-    path+=../
-  done
-  cd "$path"
+  if [[ -z $1 ]]; then
+    cd ..
+  else
+    local path i
+    for (( i=0; i < $1; i++ )); do
+      path+=../
+    done
+    cd "$path"
+  fi
 }
 
 # easily extract all compresed file formats

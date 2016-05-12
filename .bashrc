@@ -75,3 +75,5 @@ fi
 # enables i-search
 stty -ixon
 
+# use Vi bindings, instead of Emacs
+set -o vi

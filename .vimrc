@@ -41,6 +41,9 @@ let mapleader=","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Fast closing
+nmap <leader>q :q<cr>
+
 " Turn on the WiLd menu
 " Visual autocomplete for command menu
 set wildmenu

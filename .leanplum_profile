@@ -12,6 +12,7 @@ export LEANPLUM_ROOT=/Users/aleksandar/Documents/Leanplum
 export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=~/Downloads/Google\ App\ Engine\ SDK\ for\ Java/appengine-java-sdk-1.9.27/bin:$PATH
 export PATH=~/Downloads/Phabricator/arcanist/bin:$PATH
+export PATH=/Applications/Android\ Studio.app/Contents/gradle/gradle-2.10/bin/:$PATH
 
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/aleksandar/google-cloud-sdk/path.bash.inc'

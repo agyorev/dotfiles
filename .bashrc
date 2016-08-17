@@ -43,6 +43,19 @@ right_align_time() {
   printf "%*s\r" $(( COLUMNS-1 )) "$(date +%H:%M:%S)"
 }
 
+# colorize the man pages
+man() {
+    env \
+        LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+        LESS_TERMCAP_md=$(printf "\e[1;31m") \
+        LESS_TERMCAP_me=$(printf "\e[0m") \
+        LESS_TERMCAP_se=$(printf "\e[0m") \
+        LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+        LESS_TERMCAP_ue=$(printf "\e[0m") \
+        LESS_TERMCAP_us=$(printf "\e[1;32m") \
+            man "$@"
+}
+
 # (user @ host): <pwd>
 #  (<git branch>) ↳$
 export PS1="\$(right_align_time)\[\033[01;32m\](\u @ $(scutil --get ComputerName))\[\033[00m\]: \[\033[01;33m\]\w \n\[\033[01;35m\]\$(parse_git_branch) \[\033[01;32m\]↳ \[\033[00m\]$ "

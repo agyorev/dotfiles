@@ -70,6 +70,7 @@ export EDITOR=/usr/bin/vim
 # setting history size
 export HISTSIZE=100000000
 export HISTFILESIZE=10000000000
+export HISTCONTROL=ignoreboth:erasedups
 
 alias ll="ls -l"
 alias la="ls -lA"

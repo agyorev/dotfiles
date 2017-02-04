@@ -44,6 +44,9 @@ nmap <leader>w :w!<cr>
 " Fast closing
 nmap <leader>q :q<cr>
 
+" Map jk to esc
+inoremap jk <esc>
+
 " Turn on the WiLd menu
 " Visual autocomplete for command menu
 set wildmenu

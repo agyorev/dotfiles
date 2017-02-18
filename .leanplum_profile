@@ -22,6 +22,9 @@ export PATH=~/Downloads/Google\ App\ Engine\ SDK\ for\ Java/appengine-java-sdk-1
 export PATH=~/Downloads/Phabricator/arcanist/bin:$PATH
 export PATH=/Applications/Android\ Studio.app/Contents/gradle/gradle-2.10/bin:$PATH
 
+export APPENGINE_HOME=/Users/aleksandar/google-cloud-sdk/platform/google_appengine
+export PYTHONPATH=$PYTHONPATH:$APPENGINE_HOME/lib/:$APPENGINE_HOME/lib/yaml:$APPENGINE_HOME/:$APPENGINE_HOME/lib/webapp2-2.5.2/
+
 # The next line updates PATH for the Google Cloud SDK.
 source '/Users/aleksandar/google-cloud-sdk/path.bash.inc'
 

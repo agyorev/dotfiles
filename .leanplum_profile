@@ -3,6 +3,10 @@ alias lpsearch="~/Documents/Leanplum/Tools/developer-env/csearch"
 
 # Exporting the JAVA_HOME for the GAE
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
+# Usage: setjdk 1.8
+setjdk() {
+  export JAVA_HOME=$(/usr/libexec/java_home -v $1)
+}
 
 # Increase the heap size for IntelliJ performance
 vmoptions_file="/Applications/IntelliJ IDEA CE.app/Contents/bin/idea.vmoptions"; 

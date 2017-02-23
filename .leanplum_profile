@@ -2,10 +2,7 @@ alias leanplum="cd ~/Documents/Leanplum"
 alias lpsearch="~/Documents/Leanplum/Tools/developer-env/csearch"
 
 # Exporting the JAVA_HOME for the GAE
-#export JAVA_HOME='/Library/Java/JavaVirtualMachines/jdk1.7.0_79.jdk/Contents/Home'
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
-#export _JAVA_OPTIONS='-Xmx4096m'
-#export _JAVA_OPTIONS='-Xms512M -Xmx1536M -Xss1M -XX:+CMSClassUnloadingEnabled -XX:MaxPermSize=384M'
 
 # Increase the heap size for IntelliJ performance
 vmoptions_file="/Applications/IntelliJ IDEA CE.app/Contents/bin/idea.vmoptions"; 

@@ -11,9 +11,9 @@ setjdk() {
 # Increase the heap size for IntelliJ performance
 vmoptions_file="/Applications/IntelliJ IDEA CE.app/Contents/bin/idea.vmoptions"; 
 if [ -f "${vmoptions_file}" ] ; then 
-  echo "increasing intellijs max heap size to 2GB"; sed -ie "s/^\(-Xmx\).*/\12048m/" "${vmoptions_file}" ; 
+  echo "Increasing IntelliJ's max heap size to 2GB"; sed -ie "s/^\(-Xmx\).*/\12048m/" "${vmoptions_file}" ; 
 else 
-  echo "incorrect idea.vmoptions location given $vmoptions_file" ; 
+  echo "Incorrect idea.vmoptions location given $vmoptions_file" ; 
 fi
 
 export LEANPLUM_ROOT=/Users/aleksandar/Documents/Leanplum

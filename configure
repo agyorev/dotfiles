@@ -35,6 +35,8 @@ VIM_PLUGINS=(
 "sjl/gundo.vim"
 "Valloric/YouCompleteMe"
 "scrooloose/syntastic"
+'vim-airline/vim-airline'
+'vim-airline/vim-airline-themes'
 )
 
 # make sure Xcode Command Line Tools are installed

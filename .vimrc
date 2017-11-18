@@ -287,7 +287,7 @@ endif
 
 " tmux static cursor shape
 if exists('$ITERM_PROFILE')
-    if exists('$TMUX') 
+    if exists('$TMUX')
         let &t_SI = "\<Esc>[3 q"
         let &t_EI = "\<Esc>[0 q"
     else
@@ -323,9 +323,9 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 " Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" This is a slew of commands that create language-specific settings for certain 
-" filetypes/file extensions. It is important to note they are wrapped in an 
-" augroup as this ensures the autocmd's are only applied once. In addition, the 
+" This is a slew of commands that create language-specific settings for certain
+" filetypes/file extensions. It is important to note they are wrapped in an
+" augroup as this ensures the autocmd's are only applied once. In addition, the
 " autocmd! directive clears all the autocmd's for the current group.
 augroup configgroup
     autocmd!

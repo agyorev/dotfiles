@@ -194,6 +194,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Easier tab navigation
+map <C-m> gt
+map <C-n> gT
+
 " Maps Shift-[h,j,k,l] to resizing a window split
 map <silent> <S-h> <C-w><
 map <silent> <S-j> <C-W>-

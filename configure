@@ -21,6 +21,7 @@ PACKAGES=(
 "redis"
 "the_silver_searcher"
 "tmux"
+"agyorev/tools/codesearch"
 )
 
 VIM_PLUGINS=(

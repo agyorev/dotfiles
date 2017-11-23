@@ -36,7 +36,7 @@ source '/Users/aleksandar/google-cloud-sdk/completion.bash.inc'
 source '/Users/aleksandar/Downloads/Phabricator/arcanist/resources/shell/bash-completion'
 
 # SOCKS
-alias run_proxy_prod="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b prometheus-server --project leanplum"
+alias run_proxy_prod="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b spark-m --project leanplum"
 alias run_proxy_staging="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b jenkins --project leanplum-staging"
 alias chrome_proxy="\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --user-data-dir=~/.chrome-profiles/prod --proxy-server=\"socks5://localhost:9090\" &"
 

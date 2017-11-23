@@ -81,7 +81,7 @@ alias qfind="find . -name "
 # javascript run engine alias
 alias jsc="/System/Library/Frameworks/JavaScriptCore.framework/Resources/jsc"
 
-# bash completion 
+# bash completion
 if [ -f $(brew --prefix)/etc/bash_completion ]; then
     . $(brew --prefix)/etc/bash_completion
 fi

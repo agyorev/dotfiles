@@ -7,19 +7,21 @@ DOTFILES=(
 ".tmux.conf"
 ".leanplum_profile"
 )
+
 PACKAGES=(
-"bash-completion" 
-"cmake" 
-"git" 
+"bash-completion"
+"cmake"
+"git"
 "gradle"
-"macvim" 
-"maven" 
-"openssl" 
-"python" 
-"reattach-to-user-namespace" 
-"redis" 
-"the_silver_searcher" 
+"macvim"
+"maven"
+"openssl"
+"python"
+"reattach-to-user-namespace"
+"redis"
+"the_silver_searcher"
 "tmux"
+"agyorev/tools/codesearch"
 )
 
 VIM_PLUGINS=(
@@ -34,6 +36,8 @@ VIM_PLUGINS=(
 "sjl/gundo.vim"
 "Valloric/YouCompleteMe"
 "scrooloose/syntastic"
+'vim-airline/vim-airline'
+'vim-airline/vim-airline-themes'
 )
 
 # make sure Xcode Command Line Tools are installed

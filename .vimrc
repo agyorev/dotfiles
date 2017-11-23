@@ -14,6 +14,8 @@ Plugin 'elzr/vim-json'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'kien/ctrlp.vim'
 Plugin 'sjl/gundo.vim'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
 
 " apparently those don't work w/o the gui
 if has("gui_running")
@@ -192,6 +194,10 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
 
+" Easier tab navigation
+map <C-m> gt
+map <C-n> gT
+
 " Maps Shift-[h,j,k,l] to resizing a window split
 map <silent> <S-h> <C-w><
 map <silent> <S-j> <C-W>-
@@ -285,7 +291,7 @@ endif
 
 " tmux static cursor shape
 if exists('$ITERM_PROFILE')
-    if exists('$TMUX') 
+    if exists('$TMUX')
         let &t_SI = "\<Esc>[3 q"
         let &t_EI = "\<Esc>[0 q"
     else
@@ -321,9 +327,9 @@ let g:ctrlp_user_command = 'ag %s -i --nocolor --nogroup --hidden
 " Toggle gundo
 nnoremap <leader>u :GundoToggle<CR>
 
-" This is a slew of commands that create language-specific settings for certain 
-" filetypes/file extensions. It is important to note they are wrapped in an 
-" augroup as this ensures the autocmd's are only applied once. In addition, the 
+" This is a slew of commands that create language-specific settings for certain
+" filetypes/file extensions. It is important to note they are wrapped in an
+" augroup as this ensures the autocmd's are only applied once. In addition, the
 " autocmd! directive clears all the autocmd's for the current group.
 augroup configgroup
     autocmd!
@@ -351,3 +357,6 @@ augroup configgroup
     autocmd BufEnter *.sh setlocal shiftwidth=2
     autocmd BufEnter *.sh setlocal softtabstop=2
 augroup END
+
+" Airline
+let g:airline_theme='molokai'

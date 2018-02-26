@@ -37,6 +37,6 @@ source '/Users/aleksandar/Downloads/Phabricator/arcanist/resources/shell/bash-co
 
 # SOCKS
 alias run_proxy_prod="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b spark-m --project leanplum"
-alias run_proxy_staging="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b jenkins --project leanplum-staging"
+alias run_proxy_staging="gcloud compute ssh --ssh-flag=-D9090 --ssh-flag=-N --zone=us-central1-b reports-0 --project leanplum-staging"
 alias chrome_proxy="\"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome\" --user-data-dir=~/.chrome-profiles/prod --proxy-server=\"socks5://localhost:9090\" &"
 
